@@ -25,4 +25,16 @@ public interface Strings {
     }
     return strings;
   }
+
+  static boolean equalsTo(String string, String... strings) {
+    for (String s : strings)
+      if (string.equals(s)) return true;
+    return false;
+  }
+
+  static boolean contains(String string, String... strings) {
+    for (String s : strings)
+      if (string.contains(s)) return true;
+    return false;
+  }
 }

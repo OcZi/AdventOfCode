@@ -1048,7 +1048,7 @@ public abstract class PassportProcessingBase implements Puzzle<String> {
       new PassportProperty("hcl",
           value -> regexHex.matcher(value).matches()),
       new PassportProperty("ecl",
-          value -> equalsTo(value,
+          value -> Strings.equalsTo(value,
               "amb",
               "blu",
               "brn",
@@ -1069,12 +1069,6 @@ public abstract class PassportProcessingBase implements Puzzle<String> {
       return false;
     }
     return string.length() == 9;
-  }
-
-  private boolean equalsTo(String string, String... strings) {
-    for (String s : strings)
-      if (string.equals(s)) return true;
-    return false;
   }
 
   private boolean validateHeight(String value) {
